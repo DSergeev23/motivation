@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101512">
+  <meta name="description" content="Encore — личный журнал бизнес-попыток. Сохраняйте запуски, собирайте опыт и продолжайте пробовать.">
+  <title>Encore — капитал опыта</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22%23101512%22%2F%3E%3Crect%20x%3D%2213%22%20y%3D%2213%22%20width%3D%2274%22%20height%3D%2274%22%20rx%3D%2237%22%20fill%3D%22none%22%20stroke%3D%22%23bba174%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2270%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2278%22%20font-style%3D%22italic%22%20fill%3D%22%23d9c39c%22%3Ee%3C%2Ftext%3E%3C%2Fsvg%3E%0A" type="image/svg+xml">
+  <style>
+:root{color-scheme:dark;--bg:#101512;--panel:#151c17;--ink:#f0eade;--muted:#a3a69a;--gold:#c4a675;--bright:#dfc79e;--line:#343b31;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}body:has(dialog[open]){overflow:hidden}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.35;cursor:default}button,a{touch-action:manipulation}button{color:inherit}a{color:inherit;text-decoration:none}button{border:0}svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--bright);outline-offset:5px}button:disabled{transform:none!important}[hidden]{display:none!important}.svg-library{position:absolute;width:0;height:0;overflow:hidden}.shell{max-width:1240px;margin:auto;padding:0 56px}.header{height:120px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:43px;height:43px;border:1px solid #8d7857;border-radius:50%;display:grid;place-items:center;color:var(--bright)}.brand-mark span{font:italic 49px/.9 var(--serif);transform:translate(-2px,-4px)}.brand-name{font:32px/.9 var(--serif);letter-spacing:1px}.brand-caption{display:block;font:8px/1 var(--sans);letter-spacing:2.7px;color:var(--gold);margin-top:10px}.header-right{display:flex;align-items:center;gap:21px}.private-label{color:var(--muted);font-size:12px}.icon-button{display:inline-grid;place-items:center;width:44px;height:44px;background:transparent;border:1px solid var(--line);border-radius:50%;color:var(--gold)}.icon-button svg{width:18px;height:18px}.icon-button:hover{background:#263027;border-color:#7a6b50}.intro{display:flex;justify-content:space-between;align-items:flex-end;padding:52px 0 37px;gap:24px}.eyebrow{font-size:10px;font-weight:500;letter-spacing:2px;line-height:1.5;color:var(--gold);margin:0}.little-line{display:inline-block;vertical-align:middle;width:24px;height:1px;background:var(--gold);margin:0 9px 2px 0}h1{font:normal clamp(44px,4.5vw,62px)/1.06 var(--serif);letter-spacing:-1.9px;margin:20px 0 0}em{font-weight:normal;color:var(--bright)}.intro-description{font-size:13px;line-height:1.95;color:var(--muted);margin:0 0 3px;max-width:340px}.workspace{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:34px;align-items:start}.instrument{border:1px solid #414737;border-radius:20px;background:radial-gradient(ellipse at 50% 26%,#20291e 0%,var(--panel) 65%);padding:26px 30px 20px;position:relative;overflow:hidden;box-shadow:0 12px 36px #00000012}.instrument:before{content:'';position:absolute;top:0;height:1px;left:20%;right:20%;background:linear-gradient(90deg,transparent,#c4a6758c,transparent)}.panel-top{display:flex;align-items:center;justify-content:space-between}.target{font-size:9px;color:var(--muted);letter-spacing:1.4px}.target span{font:italic 17px var(--serif);color:var(--bright);letter-spacing:0;margin-left:5px}.dial{position:relative;width:100%;max-width:440px;aspect-ratio:440/330;margin:14px auto 0}.dial>svg{display:block;width:100%;height:auto;stroke:none;overflow:visible;color:var(--bright)}#dial-ticks line{stroke-linecap:butt;transition:stroke .25s}#dial-labels text{fill:#a4a591;font:12px var(--sans);letter-spacing:.7px}.dial-readout{position:absolute;left:0;right:0;top:26%;display:flex;align-items:center;flex-direction:column}.dial-readout>button{position:relative;background:transparent;display:flex;align-items:center;justify-content:center;padding:0;min-width:140px;border-radius:8px;color:var(--ink)}#attempt-count{font:normal clamp(78px,7.7vw,104px)/1 var(--serif);letter-spacing:-4px;font-variant-numeric:lining-nums tabular-nums}.count-edit{position:absolute;right:-12px;top:17px;width:13px;height:13px;color:var(--gold);opacity:.6}.dial-readout>button:hover .count-edit{opacity:1}.dial-readout p{font-size:12px;margin:8px 0 0;color:#b9baac}.readout-line{height:1px;background:#68614a;width:27px;margin:18px 0 12px}.dial-caption{font-size:7px;letter-spacing:2px;color:var(--muted)}.counter-controls{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-width:295px;margin:-14px auto 27px;position:relative}.counter-controls button{height:49px;border:1px solid #464b3b;border-radius:8px;background:#1c251d;font-size:17px;font-weight:400;transition:background .15s,transform .15s}.counter-controls button:hover{background:#303a2a}.counter-controls button:active{transform:scale(.96)}.counter-controls button.increment{background:var(--gold);color:#172016;border-color:var(--gold);font-size:21px}.counter-controls .increment span{font-weight:300;margin-right:2px}.counter-controls button.increment:hover{background:var(--bright)}.progress-section{border-top:1px solid var(--line);padding-top:20px}.progress-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}.progress-heading>span{font-size:11px;color:#c0c1b3}.progress-heading strong{font:normal 23px var(--serif);color:var(--bright)}.progress-heading strong span{font-size:14px;margin-left:1px}progress{display:block;appearance:none;-webkit-appearance:none;width:100%;height:3px;border:none;border-radius:5px;overflow:hidden;background:#363c2e;margin:12px 0}progress::-webkit-progress-bar{background:#363c2e}progress::-webkit-progress-value{background:var(--gold);transition:width .3s}progress::-moz-progress-bar{background:var(--gold)}.progress-footnote{display:flex;align-items:center;justify-content:space-between;font-size:9px;color:var(--muted);gap:8px}.progress-footnote button{font-size:9px;background:transparent;padding:8px 0;color:var(--muted)}.progress-footnote button span{color:var(--gold);margin-left:4px}.primary-button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:52px;background:var(--gold);color:#151c16;border-radius:8px;padding:15px 18px;font-size:12px;font-weight:600;transition:background .15s}.primary-button:hover{background:var(--bright)}.primary-button svg{width:18px;height:18px;flex-shrink:0}.instrument>.primary-button{margin-top:23px;justify-content:flex-start}.instrument .primary-button svg:first-child{width:16px}.button-arrow{margin-left:auto}.instrument-footnote{text-align:center;color:var(--muted);font-size:9px;margin:15px 0 0}.right-column{display:flex;flex-direction:column;gap:25px}.section-heading{display:flex;align-items:center;justify-content:space-between;padding:8px 0 19px;border-bottom:1px solid var(--line);gap:10px}.section-heading h2{font:normal 23px var(--serif);margin:0;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}.section-heading h2>span{font:10px var(--sans);display:inline-grid;place-items:center;min-width:24px;height:24px;border:1px solid var(--line);border-radius:50%;color:var(--gold);padding:3px}.journal-label{font-size:8px;letter-spacing:1.4px}.empty-state{min-height:280px;padding:26px 0 12px}.empty-illustration{position:relative;width:130px;height:58px;border-left:1px solid #736344;padding:4px 0 0 13px;margin-bottom:19px}.empty-index{font:italic 29px var(--serif);color:var(--gold);opacity:.7}.empty-rule{display:block;width:74px;height:1px;background:#3e4538;margin-top:7px}.empty-rule.short{width:46px;margin-top:8px}.empty-star{position:absolute;right:3px;top:7px;font-size:29px;font-weight:200;color:var(--gold);opacity:.5}.empty-state h3{font:normal 25px/1.22 var(--serif);letter-spacing:-.5px;margin:0 0 11px}.empty-state p{font-size:11px;line-height:1.9;color:var(--muted);margin:0}.text-button{background:transparent;color:var(--bright);font-size:11px;min-height:44px;padding:10px 0 4px;display:flex;align-items:center;gap:23px}.text-button span{font-size:16px}.entries{max-height:312px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5b5944 transparent}.entry{width:100%;display:grid;grid-template-columns:32px minmax(0,1fr) 18px;align-items:start;gap:10px;text-align:left;background:transparent;border-bottom:1px solid var(--line);padding:20px 3px 20px 0}.entry:hover{background:#1c241b}.entry-number{font:italic 20px var(--serif);color:var(--gold);line-height:1.3}.entry-content{min-width:0}.entry-title{display:block;color:var(--ink);font-size:12px;line-height:1.5;overflow-wrap:anywhere}.entry-note{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--muted);font-size:10px;line-height:1.8;margin-top:5px;white-space:pre-wrap;overflow-wrap:anywhere}.entry-meta{display:block;font-size:8px;letter-spacing:.3px;color:#a2a590;margin-top:9px}.entry.empty .entry-title{color:var(--muted)}.entry svg{width:13px;height:13px;color:var(--gold);margin-top:4px}.quote-card{position:relative;padding:23px 24px 13px;border:1px solid #454334;border-radius:12px;background:#20251b}.quote-top{display:flex;align-items:center;justify-content:space-between;height:13px;gap:4px}.quote-top .eyebrow{font-size:8px;letter-spacing:1.5px}.quote-glyph{font:51px/.8 var(--serif);color:var(--gold);opacity:.65;transform:translateY(7px)}blockquote{font:italic 25px/1.28 var(--serif);color:var(--ink);letter-spacing:-.35px;margin:23px 0 20px;min-height:64px}blockquote.long{font-size:19px;line-height:1.4}.quote-attribution{display:flex;align-items:center;gap:10px}.author-monogram{display:grid;place-items:center;width:31px;height:31px;border:1px solid #655c43;border-radius:50%;font:italic 11px var(--serif);color:var(--bright);flex-shrink:0}.quote-attribution p{font-size:10px;margin:0 0 5px;color:#d4d0be}.quote-attribution a{font-size:8px;color:var(--muted);text-decoration:underline;text-decoration-color:#68654d;text-underline-offset:3px}.quote-attribution a:hover{color:var(--bright)}.quote-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:15px;border-top:1px solid #3d4231;padding-top:9px}.quote-bottom>span{font-size:8px;color:var(--muted);letter-spacing:1.5px}.quote-nav{display:flex;gap:5px}.quote-nav .icon-button{width:32px;height:32px;border:none}.quote-nav .icon-button svg{width:15px;height:15px}.reverse{transform:rotate(180deg)}.personal-note{display:flex;gap:22px;align-items:center;margin-top:34px;padding:29px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.note-symbol{display:grid;place-items:center;width:46px;height:46px;font:32px var(--serif);color:var(--gold);border:1px solid #5c5741;border-radius:50%;flex-shrink:0}.personal-note h2{font:normal 21px var(--serif);margin:0 0 8px;letter-spacing:-.3px}.personal-note p{font-size:11px;line-height:1.85;color:var(--muted);margin:0;max-width:650px}.note-caption{margin-left:auto;flex-shrink:0;color:var(--gold);font-size:8px;line-height:1.8;letter-spacing:1.5px}.footer{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:95px;padding-bottom:env(safe-area-inset-bottom)}.footer-motto{color:#a0a28f;font:italic 13px var(--serif)}.footer>button{display:flex;align-items:center;gap:8px;background:transparent;color:var(--muted);padding:13px 0;font-size:9px}.status-dot{width:4px;height:4px;border-radius:50%;background:#a6ab87}.storage-warning{font-size:12px;line-height:1.6;border:1px solid #b79562;padding:14px;color:var(--bright);border-radius:8px;margin:0 0 20px}.noscript{padding:30px;color:var(--bright);text-align:center}
+dialog{width:min(480px,calc(100% - 32px));max-height:calc(100dvh - 32px);border:1px solid #615840;border-radius:17px;background:#192018;color:var(--ink);padding:25px 28px 28px;box-shadow:0 30px 140px #0008;overflow-y:auto}dialog::backdrop{background:#050a07be;backdrop-filter:blur(6px)}.dialog-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:10px}.dialog-top .eyebrow{font-size:9px}.dialog-top .icon-button{width:35px;height:35px;border:none}.dialog-top .icon-button svg{width:19px;height:19px}dialog h2{font:normal 37px/1.12 var(--serif);letter-spacing:-.8px;margin:0 0 18px}.dialog-description{font-size:12px;line-height:1.8;color:#b7baab;margin:0 0 22px}dialog label{display:block;font-size:11px;color:var(--ink);margin:20px 0 9px}input,textarea{display:block;width:100%;color:var(--ink);background:#111811;border:1px solid #4a513e;border-radius:7px;padding:13px;font-size:13px;line-height:1.5}input::placeholder,textarea::placeholder{color:#9ca38f;font-size:12px}textarea{resize:vertical;min-height:110px}.field-hint{font-size:10px;color:var(--muted);line-height:1.7;margin:9px 0 21px}dialog .primary-button{margin-top:20px}.secondary-button{display:block;width:100%;background:transparent;border:1px solid #5b5b43;border-radius:8px;min-height:48px;margin-top:11px;color:var(--bright);font-size:12px}.secondary-button:hover{background:#293122}.delete-button{display:block;margin:10px auto 0;background:transparent;color:#d1aa92;font-size:11px;min-height:44px;padding:8px 16px}.formula{background:#101810;border:1px solid var(--line);border-radius:8px;color:var(--bright);padding:18px;margin:0 0 20px;text-align:center;font:italic 22px var(--serif)}#count-input{font:normal 48px var(--serif);text-align:center;margin-bottom:17px}.form-error{color:#e6bd9d;font-size:11px;line-height:1.6}.toast{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:20;background:#e4d5b8;color:#141b14;border:1px solid #f3e5c9;border-radius:10px;padding:14px 13px 14px 20px;box-shadow:0 7px 40px #0005;display:flex;gap:18px;align-items:center;max-width:calc(100% - 32px);font-size:12px}.toast>span{line-height:1.5}.toast button{background:transparent;color:inherit;font-size:12px}.toast #undo-button{text-decoration:underline;text-underline-offset:3px;padding:5px 0}.toast-close{font-size:23px!important;min-width:28px;min-height:28px}
+@media(min-width:1500px){.shell{max-width:1300px}.intro{padding-top:58px;padding-bottom:45px}.workspace{gap:42px}.instrument{padding-left:38px;padding-right:38px}.dial{margin-top:23px}.counter-controls{margin-top:-4px}.right-column{gap:29px}.empty-state{min-height:300px}.quote-card{padding:25px 27px 16px}.entries{max-height:340px}}
+@media(max-width:900px){.shell{padding:0 30px}.workspace{gap:23px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.intro-description{font-size:11px}.instrument{padding:23px 20px 18px}.dial-caption{font-size:6px;letter-spacing:1.4px}.readout-line{margin:13px 0 10px}#attempt-count{font-size:83px}.dial-readout p{font-size:10px}.count-edit{right:-3px}.counter-controls{margin-top:-3px;margin-bottom:22px}.counter-controls button{height:46px}.section-heading h2{font-size:21px}.journal-label{display:none}.quote-card{padding:21px 18px 11px}.note-caption{display:none}.personal-note p{max-width:580px}.progress-heading>span{font-size:10px}}
+@media(max-width:650px){.shell{padding:0 21px}.header{height:92px}.brand-mark{width:36px;height:36px}.brand-mark span{font-size:42px}.brand-name{font-size:29px}.brand-caption{font-size:6px;letter-spacing:2.4px;margin-top:9px}.brand{gap:10px}.private-label{font-size:10px}.header-right{gap:10px}.header .icon-button{width:38px;height:38px}.header .icon-button svg{width:16px;height:16px}.intro{display:block;padding:33px 0 27px}.intro .eyebrow{font-size:8px;letter-spacing:1.8px}h1{font-size:clamp(30px,9.8vw,44px);letter-spacing:-1.2px;line-height:1.09;margin-top:17px}.intro-description{font-size:11px;line-height:1.85;margin-top:17px;max-width:330px}.intro-description br:nth-child(2){display:none}.workspace{display:flex;flex-direction:column;gap:29px}.instrument{width:100%;padding:22px 21px 18px;border-radius:17px}.panel-top h2{font-size:8px;letter-spacing:1.8px}.target{font-size:8px;letter-spacing:1px}.target span{font-size:15px}.dial{max-width:350px;margin-top:17px}.dial-readout{top:25%}#attempt-count{font-size:90px}.dial-readout p{font-size:11px;margin-top:5px}.readout-line{margin:14px 0 12px}.dial-caption{font-size:6px;letter-spacing:1.6px}.count-edit{right:-1px;top:17px;width:12px}.counter-controls{max-width:270px;margin:1px auto 24px;gap:10px}.counter-controls button{height:49px}.progress-section{padding-top:19px}.progress-heading>span{font-size:10px}.progress-heading strong{font-size:25px}.progress-footnote{font-size:8px}.progress-footnote button{font-size:8px;min-height:32px}.instrument>.primary-button{margin-top:17px;min-height:52px}.instrument-footnote{font-size:8px;margin-top:13px}.right-column{width:100%;gap:24px}.section-heading{padding:0 0 17px}.section-heading h2{font-size:25px}.journal-label{display:block;font-size:7px;letter-spacing:1px}.empty-state{padding:26px 0 5px;min-height:263px}.empty-state h3{font-size:27px}.empty-state p{font-size:11px}.empty-illustration{margin-bottom:17px}.text-button{font-size:12px;gap:28px}.entries{max-height:390px}.entry{padding-top:21px;padding-bottom:21px;grid-template-columns:33px minmax(0,1fr) 19px}.entry-title{font-size:13px}.entry-note{font-size:11px}.entry-meta{font-size:9px}.quote-card{padding:24px 22px 13px}.quote-top .eyebrow{font-size:7px;letter-spacing:1.5px}blockquote{font-size:27px;min-height:70px;margin-top:23px}.quote-attribution p{font-size:11px}.quote-attribution a{font-size:9px}.quote-nav .icon-button{width:44px;height:40px}.personal-note{margin-top:28px;padding:26px 0;gap:14px;align-items:flex-start}.personal-note h2{font-size:22px;line-height:1.25}.personal-note p{font-size:11px;line-height:1.8}.note-symbol{width:31px;height:31px;font-size:23px;transform:translateY(2px)}.footer{flex-direction:column;gap:4px;justify-content:center;align-items:flex-start;padding:22px 0 calc(22px + env(safe-area-inset-bottom));min-height:98px}.footer-motto{font-size:12px}.footer>button{font-size:9px;padding:10px 0}.toast{width:max-content;gap:12px;font-size:11px;padding:12px 10px 12px 15px}.toast #undo-button{font-size:11px}dialog{padding:21px 22px 24px;border-radius:15px}dialog h2{font-size:34px}input,textarea{font-size:16px}dialog .dialog-description{font-size:12px}#count-input{font-size:48px}}
+@media(max-width:370px){.shell{padding:0 16px}h1{font-size:9.6vw}.instrument{padding-left:17px;padding-right:17px}.dial-readout{top:24%}#attempt-count{font-size:78px}.dial-readout p{font-size:10px}.dial-caption{font-size:5.5px}.readout-line{margin:12px 0 9px}.counter-controls{margin-top:5px}.private-label{display:none}.journal-label{font-size:6px}.section-heading h2{font-size:23px}.progress-heading>span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+</style>
+  
+  
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="edit" viewBox="0 0 24 24"><path d="m15 5 4 4M4 20l5-1L20 8a2.8 2.8 0 0 0-4-4L5 15l-1 5Z"/></symbol>
+    <symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  </svg>
+
+  <div class="shell">
+    <header class="header">
+      <a class="brand" href="./" aria-label="Encore — главная">
+        <span class="brand-mark" aria-hidden="true"><span>e</span></span>
+        <span class="brand-name">encore<span class="brand-caption">КАПИТАЛ ОПЫТА</span></span>
+      </a>
+      <div class="header-right"><span class="private-label">Личный журнал</span><button class="icon-button" id="open-settings" aria-label="Хранение и резервная копия"><svg><use href="#lock"/></svg></button></div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow"><span class="little-line"></span> ИСКУССТВО ПРОБОВАТЬ</p><h1 id="page-title">Каждая попытка —<br><em>уже капитал.</em></h1></div>
+        <p class="intro-description">Бизнес не получился. Опыт остался.<br>Отмечайте запуски, сохраняйте выводы.<br>И давайте себе ещё одну попытку.</p>
+      </section>
+
+      <div class="workspace">
+        <section class="instrument" aria-labelledby="scale-heading">
+          <div class="panel-top"><h2 id="scale-heading" class="eyebrow">ШКАЛА ПОПЫТОК</h2><span class="target">ОРИЕНТИР <span>100</span></span></div>
+          <div class="dial">
+            <svg id="dial-svg" viewBox="0 0 440 330" aria-hidden="true"><g id="dial-ticks"></g><g id="dial-labels"></g><circle id="dial-marker" r="4.5" fill="currentColor"/></svg>
+            <div class="dial-readout"><button id="open-count" aria-label="Изменить количество попыток"><span id="attempt-count">00</span><svg class="count-edit"><use href="#edit"/></svg></button><p>неудачных запусков</p><span class="readout-line"></span></div>
+          </div>
+          <div class="counter-controls" role="group" aria-label="Изменить количество попыток"><button id="decrease" aria-label="Убрать одну попытку">−1</button><button class="increment" id="increase" aria-label="Добавить одну попытку"><span>+</span>1</button></div>
+          <div class="progress-section"><div class="progress-heading"><span>Условный прогресс к успеху</span><strong id="progress-label">0<span>%</span></strong></div><progress id="progress" max="100" value="0" aria-label="Условный прогресс к успеху">0%</progress><div class="progress-footnote"><span>1 попытка = 1%</span><button id="open-explanation" aria-label="Как считается условный прогресс">Как это работает <span>↗</span></button></div></div>
+          <button class="primary-button" id="add-attempt"><svg><use href="#plus"/></svg><span>Записать попытку</span><svg class="button-arrow"><use href="#arrow"/></svg></button>
+          <p class="instrument-footnote">Каждая отметка — шаг, который вы сделали.</p>
+        </section>
+
+        <div class="right-column">
+          <section class="journal" aria-labelledby="journal-heading">
+            <div class="section-heading"><h2 id="journal-heading">История попыток<span id="journal-total">0</span></h2><span class="eyebrow journal-label">ВАШ ПУТЬ</span></div>
+            <div class="empty-state" id="empty-state"><div class="empty-illustration" aria-hidden="true"><span class="empty-index">01</span><span class="empty-rule"></span><span class="empty-rule short"></span><span class="empty-star">✳</span></div><h3>У большой истории<br>есть первая страница.</h3><p>Добавьте свой первый запуск.<br>Даже если он не стал большим бизнесом.</p><button class="text-button" id="add-first">Начать историю <span>↗</span></button></div>
+            <div id="entries" class="entries"></div>
+          </section>
+
+          <aside class="quote-card" aria-label="Мысли о попытках">
+            <div class="quote-top"><span class="eyebrow">ПРОДОЛЖАЙТЕ ПРОБОВАТЬ</span><span class="quote-glyph" aria-hidden="true">“</span></div>
+            <div id="quote-content" aria-live="polite"><blockquote id="quote-text"></blockquote><div class="quote-attribution"><span class="author-monogram" id="author-monogram" aria-hidden="true"></span><div><p id="quote-author"></p><a id="quote-source" target="_blank" rel="noopener noreferrer"></a></div></div></div>
+            <div class="quote-bottom"><span id="quote-index">01 / 02</span><div class="quote-nav"><button class="icon-button" id="quote-previous" aria-label="Предыдущая цитата"><svg class="reverse"><use href="#chevron"/></svg></button><button class="icon-button" id="quote-next" aria-label="Следующая цитата"><svg><use href="#chevron"/></svg></button></div></div>
+          </aside>
+        </div>
+      </div>
+
+      <section class="personal-note" aria-label="Напоминание перед следующей попыткой"><span class="note-symbol" aria-hidden="true">↗</span><div><h2 id="motivation-title">Вам не нужно угадать с первого раза.</h2><p id="motivation-text">Выберите идею, проверьте её небольшим запуском и запишите, что узнали. Следующая попытка начнётся уже с этого опыта.</p></div><span class="note-caption">ЕЩЁ ОДНА<br>ПОПЫТКА.</span></section>
+    </main>
+
+    <footer class="footer"><span class="footer-motto">Опыт накапливается. Вы продолжаете.</span><button id="storage-footer"><span class="status-dot"></span><span id="storage-label">Сохраняется на этом устройстве</span></button></footer>
+    <p class="storage-warning" id="storage-warning" role="alert" hidden></p>
+  </div>
+
+  <dialog id="attempt-dialog" aria-labelledby="attempt-dialog-title">
+    <form id="attempt-form"><div class="dialog-top"><p class="eyebrow" id="attempt-number">НОВАЯ ПОПЫТКА</p><button class="icon-button" type="button" data-close aria-label="Закрыть"><svg><use href="#close"/></svg></button></div><h2 id="attempt-dialog-title">У каждого запуска<br><em>есть своя история.</em></h2><p class="dialog-description" id="attempt-description">Новая запись добавит одну попытку на шкалу.</p><label for="attempt-title">Что пробовали запускать?</label><input id="attempt-title" name="title" maxlength="80" placeholder="Например, сервис для малого бизнеса" required autocomplete="off"><label for="attempt-note">Что получилось и какой вывод?</label><textarea id="attempt-note" name="note" maxlength="2000" rows="4" placeholder="Что не сработало? Что учтёте в следующий раз?"></textarea><p class="field-hint">Короткой заметки достаточно.</p><p class="form-error" id="attempt-error" role="alert" hidden></p><button type="submit" class="primary-button" id="save-attempt">Сохранить попытку <svg><use href="#arrow"/></svg></button><button type="button" class="delete-button" id="delete-attempt" hidden>Удалить эту попытку</button></form>
+  </dialog>
+
+  <dialog id="count-dialog" aria-labelledby="count-dialog-title"><form id="count-form"><div class="dialog-top"><p class="eyebrow">ВАША ШКАЛА</p><button class="icon-button" type="button" data-close aria-label="Закрыть"><svg><use href="#close"/></svg></button></div><h2 id="count-dialog-title">Сколько было<br><em>попыток?</em></h2><label for="count-input">Общее количество неудачных запусков</label><input id="count-input" type="number" min="0" max="999" step="1" required inputmode="numeric"><p id="count-hint" class="dialog-description">Новые попытки появятся в журнале без описания.</p><button class="primary-button" type="submit">Сохранить количество <svg><use href="#arrow"/></svg></button></form></dialog>
+
+  <dialog id="explanation-dialog" aria-labelledby="explanation-title"><div class="dialog-top"><p class="eyebrow">ФОРМУЛА ДВИЖЕНИЯ</p><button class="icon-button" data-close aria-label="Закрыть"><svg><use href="#close"/></svg></button></div><h2 id="explanation-title">Сто попыток.<br><em>Своя дистанция.</em></h2><p class="dialog-description">Мы приняли 100 попыток за условный ориентир. Каждая добавляет 1% на шкале: 25 запусков — 25%, 100 и больше — 100%.</p><div class="formula">попытки / 100 × 100%</div><p class="dialog-description">Это мотивационный прогресс, а не вероятность успеха. Счётчик продолжает расти после 100. Число 100 — настройка этого журнала, а не обещание или правило Дороничева и Либерманов.</p><p class="dialog-description">Имеет значение и то, чему вы научились. Записывайте выводы, чтобы следующая попытка была осмысленнее предыдущей.</p><button class="primary-button" data-close>Продолжить свой путь <svg><use href="#arrow"/></svg></button></dialog>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-top"><p class="eyebrow">ЛИЧНОЕ ПРОСТРАНСТВО</p><button class="icon-button" data-close aria-label="Закрыть"><svg><use href="#close"/></svg></button></div><h2 id="settings-title">Ваш опыт.<br><em>Ваши записи.</em></h2><p class="dialog-description">Журнал хранится в этом браузере на этом устройстве. Записи не отправляются на сервер и не синхронизируются между устройствами.</p><p class="dialog-description">При очистке данных сайта или выходе из приватного режима записи могут исчезнуть. Сохраните копию, чтобы перенести журнал или восстановить его позже.</p><button id="export-data" class="primary-button"><span>Скачать резервную копию</span><svg><use href="#download"/></svg></button><button id="import-data" class="secondary-button">Восстановить из копии</button><input type="file" id="import-file" accept="application/json,.json" hidden><p class="field-hint" id="backup-status" role="status"></p></dialog>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-top"><p class="eyebrow">ПОДТВЕРЖДЕНИЕ</p><button class="icon-button" data-close aria-label="Закрыть"><svg><use href="#close"/></svg></button></div><h2 id="confirm-title">Удалить попытку?</h2><p class="dialog-description" id="confirm-description"></p><button class="primary-button" id="confirm-action">Подтвердить</button><button class="secondary-button" data-close>Отмена</button></dialog>
+
+  <div class="toast" id="toast" role="status" hidden><span id="toast-text"></span><button id="undo-button" hidden>Отменить</button><button class="toast-close" id="toast-close" aria-label="Скрыть уведомление">×</button></div>
+  <noscript><p class="noscript">Для работы журнала включите JavaScript в браузере.</p></noscript>
+<script>
+/* Browser-local journal. One attempt is one point; no server or database. */
+globalThis.EncoreModel = (() => {
+  const MAX = 999;
+  const KEY = 'encore.journal.v1';
+  const empty = () => ({ version: 1, attempts: [] });
+  function validate(value) {
+    if (!value || value.version !== 1 || !Array.isArray(value.attempts) || value.attempts.length > MAX) throw new Error('Invalid journal');
+    const ids = new Set();
+    const attempts = value.attempts.map(a => {
+      if (!a || typeof a.id !== 'string' || !a.id || a.id.length > 100 || ids.has(a.id) || typeof a.title !== 'string' || a.title.length > 80 || typeof a.note !== 'string' || a.note.length > 2000 || typeof a.date !== 'string' || !Number.isFinite(Date.parse(a.date))) throw new Error('Invalid attempt');
+      ids.add(a.id);
+      return { id: a.id, title: a.title, note: a.note, date: a.date };
+    });
+    return { version: 1, attempts };
+  }
+  function resize(state, count) {
+    if (!Number.isInteger(count) || count < 0 || count > MAX) throw new Error('Invalid count');
+    const attempts = state.attempts.slice(0, count);
+    while (attempts.length < count) attempts.push({ id: crypto.randomUUID(), title: '', note: '', date: new Date().toISOString() });
+    return { version: 1, attempts };
+  }
+  const progress = count => Math.min(100, Math.max(0, count));
+  return { KEY, MAX, empty, validate, resize, progress };
+})();
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const M = EncoreModel;
+  const $ = id => document.getElementById(id);
+  let state = M.empty();
+  let storageBlocked = false;
+  let undoState = null;
+  let toastTimer;
+  let editingId = null;
+  let confirmCallback = null;
+  let quoteIndex = 0;
+
+  // Short excerpts as published in Russian-language interview coverage.
+  const quotes = [
+    { text: 'Успех — это количество попыток, умноженных на вероятность успеха каждый раз.', author: 'Андрей Дороничев', initials: 'АД', source: 'вДудь · 2025 · публикация vc.ru ↗', url: 'https://vc.ru/ai/2152603-andrei-doronichev-o-budushchem-ii' },
+    { text: 'Мы думали о наших проектах, как о шагах: с каждым провалом мы развиваемся и становимся дороже на рынке.', author: 'Давид Либерман', initials: 'ДЛ', source: 'Подкаст Соколовского · 2024 ↗', url: 'https://vc.ru/life/1042797-s-ai-nas-zhdet-polnaya-rasshifrovka-dnk-startapery-bratya-libermany-o-robotizirovannom-budushem-i-investiciyah-v-lyudei' }
+  ];
+
+  function storageWarning(message) {
+    $('storage-warning').hidden = false;
+    $('storage-warning').textContent = message;
+    $('storage-label').textContent = 'Сохранение недоступно';
+  }
+  try {
+    const saved = localStorage.getItem(M.KEY);
+    if (saved !== null) state = M.validate(JSON.parse(saved));
+  } catch {
+    storageBlocked = true;
+    storageWarning('Не удалось прочитать хранилище. Исходные данные не перезаписаны. Изменения доступны только до закрытия страницы — скачайте резервную копию.');
+  }
+
+  function persist() {
+    if (storageBlocked) return false;
+    try {
+      localStorage.setItem(M.KEY, JSON.stringify(state));
+      $('storage-warning').hidden = true;
+      $('storage-label').textContent = 'Сохранено на этом устройстве';
+      return true;
+    } catch {
+      storageWarning('Браузер не смог сохранить изменения. Записи пока доступны на этой странице. Скачайте резервную копию перед закрытием.');
+      return false;
+    }
+  }
+  function toast(message, canUndo = false) {
+    clearTimeout(toastTimer);
+    $('toast-text').textContent = message;
+    $('undo-button').hidden = !canUndo;
+    $('toast').hidden = false;
+    toastTimer = setTimeout(() => { $('toast').hidden = true; undoState = null; }, canUndo ? 12000 : 5000);
+  }
+  function commit(next, message, canUndo = false) {
+    const previous = state;
+    state = M.validate(next);
+    const saved = persist();
+    render();
+    undoState = canUndo ? previous : null;
+    toast(saved ? message : message + ' · Скачайте копию: сохранение недоступно.', canUndo);
+  }
+  function openDialog(id) { $(id).showModal(); }
+  document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => {
+      const r = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close();
+    });
+  });
+  function confirmAction(title, description, label, callback) {
+    $('confirm-title').textContent = title;
+    $('confirm-description').textContent = description;
+    $('confirm-action').textContent = label;
+    confirmCallback = callback;
+    openDialog('confirm-dialog');
+  }
+  $('confirm-action').addEventListener('click', () => {
+    $('confirm-dialog').close();
+    const action = confirmCallback;
+    confirmCallback = null;
+    if (action) action();
+  });
+
+  const svgNS = 'http://www.w3.org/2000/svg';
+  function svgElement(name, attributes) {
+    const element = document.createElementNS(svgNS, name);
+    Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+    return element;
+  }
+  function point(index, radius) {
+    const angle = (140 + index * 2.6) * Math.PI / 180;
+    return [220 + Math.cos(angle) * radius, 190 + Math.sin(angle) * radius];
+  }
+  const ticks = [];
+  for (let i = 1; i <= 100; i++) {
+    const major = i % 10 === 0;
+    const [x1, y1] = point(i, major ? 144 : 153);
+    const [x2, y2] = point(i, 166);
+    const tick = svgElement('line', { x1, y1, x2, y2, 'stroke-width': major ? 2.5 : 1.5 });
+    ticks.push(tick);
+    $('dial-ticks').append(tick);
+  }
+  [0, 25, 50, 75, 100].forEach(i => {
+    const [x, y] = point(i, 126);
+    const text = svgElement('text', { x, y: y + 4, 'text-anchor': 'middle' });
+    text.textContent = i.toString().padStart(2, '0');
+    $('dial-labels').append(text);
+  });
+
+  function render() {
+    const count = state.attempts.length;
+    const progress = M.progress(count);
+    $('attempt-count').textContent = count.toString().padStart(2, '0');
+    $('open-count').setAttribute('aria-label', `Попыток: ${count}. Изменить количество`);
+    $('journal-total').textContent = count;
+    $('progress-label').replaceChildren(document.createTextNode(progress), Object.assign(document.createElement('span'), { textContent: '%' }));
+    $('progress').value = progress;
+    $('progress').textContent = progress + '%';
+    ticks.forEach((tick, i) => tick.setAttribute('stroke', i < progress ? '#d4b684' : '#434b39'));
+    const [cx, cy] = point(progress, 177);
+    $('dial-marker').setAttribute('cx', cx);
+    $('dial-marker').setAttribute('cy', cy);
+    $('decrease').disabled = count === 0;
+    $('increase').disabled = count >= M.MAX;
+    $('add-attempt').disabled = count >= M.MAX;
+    $('empty-state').hidden = count > 0;
+    $('entries').hidden = count === 0;
+    const fragment = document.createDocumentFragment();
+    state.attempts.forEach((attempt, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'entry' + (attempt.title ? '' : ' empty');
+      button.dataset.id = attempt.id;
+      button.setAttribute('aria-label', `Редактировать попытку ${index + 1}${attempt.title ? ': ' + attempt.title : ', добавить описание'}`);
+      const number = Object.assign(document.createElement('span'), { className: 'entry-number', textContent: (index + 1).toString().padStart(2, '0') });
+      const content = Object.assign(document.createElement('span'), { className: 'entry-content' });
+      content.append(Object.assign(document.createElement('span'), { className: 'entry-title', textContent: attempt.title || 'Попытка без описания' }));
+      content.append(Object.assign(document.createElement('span'), { className: 'entry-note', textContent: attempt.note || (attempt.title ? 'Вы можете добавить выводы об этом запуске.' : 'Нажмите, чтобы записать, что пробовали.') }));
+      content.append(Object.assign(document.createElement('span'), { className: 'entry-meta', textContent: new Date(attempt.date).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }) }));
+      const icon = svgElement('svg', { 'aria-hidden': 'true', viewBox: '0 0 24 24' });
+      icon.append(svgElement('use', { href: '#arrow' }));
+      button.append(number, content, icon);
+      fragment.prepend(button);
+    });
+    $('entries').replaceChildren(fragment);
+    const motivation = count === 0
+      ? ['Вам не нужно угадать с первого раза.', 'Выберите идею, проверьте её небольшим запуском и запишите, что узнали. Следующая попытка начнётся уже с этого опыта.']
+      : count < 10
+        ? ['Вы уже сделали больше, чем просто задумали.', 'Неудачный запуск может разочаровать. Дайте себе время, а затем сохраните главное: что проверили, что узнали и что измените. Вам не нужно начинать с нуля — у вас уже есть опыт.']
+        : count < 100
+          ? ['У вас уже есть собственный капитал опыта.', 'Посмотрите на свои записи: какие ошибки повторяются, какие идеи встречают отклик? Выберите одну новую гипотезу и способ проверить её с небольшим риском. Продолжать — значит ещё и менять подход.']
+          : ['Сто — отметка на шкале. Дальше — ваш путь.', 'Вы прошли условную дистанцию журнала. Теперь особенно ценно увидеть закономерности: что стоит продолжать, от чего отказаться и какой следующий запуск будет осмысленным. Берите с собой выводы, а не только счётчик.'];
+    $('motivation-title').textContent = motivation[0];
+    $('motivation-text').textContent = motivation[1];
+  }
+
+  function add() {
+    const count = state.attempts.length + 1;
+    if (count > M.MAX) return toast('Максимум — 999 попыток.');
+    commit(M.resize(state, count), 'Добавлена одна попытка', true);
+  }
+  $('increase').addEventListener('click', add);
+  $('decrease').addEventListener('click', () => {
+    if (state.attempts.length) commit(M.resize(state, state.attempts.length - 1), 'Последняя попытка удалена', true);
+  });
+  $('undo-button').addEventListener('click', () => {
+    if (!undoState) return;
+    const previous = undoState;
+    undoState = null;
+    commit(previous, 'Изменение отменено');
+  });
+  $('toast-close').addEventListener('click', () => { $('toast').hidden = true; });
+
+  function editAttempt(id = null) {
+    const attempt = id ? state.attempts.find(a => a.id === id) : null;
+    if (id && !attempt) return toast('Эта попытка уже удалена.');
+    if (!attempt && state.attempts.length >= M.MAX) return toast('Максимум — 999 попыток.');
+    editingId = id;
+    $('attempt-form').reset();
+    $('attempt-title').value = attempt?.title || '';
+    $('attempt-note').value = attempt?.note || '';
+    $('attempt-error').hidden = true;
+    $('attempt-number').textContent = attempt ? `ПОПЫТКА №${(state.attempts.findIndex(a => a.id === id) + 1).toString().padStart(2, '0')}` : 'НОВАЯ ПОПЫТКА';
+    $('attempt-description').textContent = attempt ? 'Название и выводы можно изменить в любой момент.' : 'Новая запись добавит одну попытку на шкалу.';
+    $('delete-attempt').hidden = !attempt;
+    openDialog('attempt-dialog');
+    $('attempt-title').focus({ preventScroll: true });
+  }
+  $('add-attempt').addEventListener('click', () => editAttempt());
+  $('add-first').addEventListener('click', () => editAttempt());
+  $('entries').addEventListener('click', event => {
+    const button = event.target.closest('[data-id]');
+    if (button) editAttempt(button.dataset.id);
+  });
+  $('attempt-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const title = $('attempt-title').value.trim();
+    const note = $('attempt-note').value.trim();
+    if (!title) {
+      $('attempt-error').textContent = 'Напишите, что пробовали запускать.';
+      $('attempt-error').hidden = false;
+      return $('attempt-title').focus();
+    }
+    let next;
+    if (editingId) {
+      if (!state.attempts.some(a => a.id === editingId)) {
+        $('attempt-error').textContent = 'Эта попытка удалена в другой вкладке. Скопируйте заметку перед закрытием.';
+        $('attempt-error').hidden = false;
+        return;
+      }
+      next = { version: 1, attempts: state.attempts.map(a => a.id === editingId ? { ...a, title, note } : a) };
+    } else {
+      if (state.attempts.length >= M.MAX) return toast('Максимум — 999 попыток.');
+      next = M.resize(state, state.attempts.length + 1);
+      Object.assign(next.attempts.at(-1), { title, note });
+    }
+    $('attempt-dialog').close();
+    commit(next, editingId ? 'Описание сохранено' : 'Попытка и выводы сохранены', true);
+  });
+  $('delete-attempt').addEventListener('click', () => {
+    const id = editingId;
+    confirmAction('Удалить попытку?', 'Описание и выводы этой попытки будут удалены, а счётчик уменьшится на один.', 'Удалить попытку', () => {
+      $('attempt-dialog').close();
+      commit({ version: 1, attempts: state.attempts.filter(a => a.id !== id) }, 'Попытка удалена', true);
+    });
+  });
+
+  function updateCountHint() {
+    const count = Number($('count-input').value);
+    const removed = state.attempts.length - count;
+    $('count-hint').textContent = removed > 0 ? `Будут удалены последние записи: ${removed}. Их описания и выводы тоже удалятся. После сохранения изменение можно отменить.` : 'Новые попытки появятся в журнале без описания.';
+  }
+  $('open-count').addEventListener('click', () => {
+    $('count-input').value = state.attempts.length;
+    updateCountHint();
+    openDialog('count-dialog');
+    $('count-input').select();
+  });
+  $('count-input').addEventListener('input', updateCountHint);
+  $('count-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const value = $('count-input').value;
+    const count = Number(value);
+    if (value === '' || !Number.isInteger(count) || count < 0 || count > M.MAX) return;
+    const apply = () => {
+      $('count-dialog').close();
+      commit(M.resize(state, count), 'Количество попыток обновлено', true);
+    };
+    if (count < state.attempts.length) confirmAction('Уменьшить количество?', `Будут удалены последние записи: ${state.attempts.length - count}. Их названия и выводы тоже удалятся.`, 'Уменьшить количество', apply);
+    else apply();
+  });
+
+  function renderQuote() {
+    const quote = quotes[quoteIndex];
+    $('quote-text').textContent = '«' + quote.text + '»';
+    $('quote-text').classList.toggle('long', quote.text.length > 160);
+    $('quote-author').textContent = quote.author;
+    $('author-monogram').textContent = quote.initials;
+    $('quote-source').textContent = quote.source;
+    $('quote-source').href = quote.url;
+    $('quote-index').textContent = `${(quoteIndex + 1).toString().padStart(2, '0')} / ${quotes.length.toString().padStart(2, '0')}`;
+  }
+  $('quote-next').addEventListener('click', () => { quoteIndex = (quoteIndex + 1) % quotes.length; renderQuote(); });
+  $('quote-previous').addEventListener('click', () => { quoteIndex = (quoteIndex + quotes.length - 1) % quotes.length; renderQuote(); });
+  $('open-explanation').addEventListener('click', () => openDialog('explanation-dialog'));
+  function openSettings() { $('backup-status').textContent = ''; openDialog('settings-dialog'); }
+  $('open-settings').addEventListener('click', openSettings);
+  $('storage-footer').addEventListener('click', openSettings);
+  $('export-data').addEventListener('click', () => {
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `encore-journal-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    $('backup-status').textContent = 'Копия подготовлена. Сохраните файл в надёжном месте.';
+  });
+  $('import-data').addEventListener('click', () => $('import-file').click());
+  $('import-file').addEventListener('change', async event => {
+    const file = event.target.files[0];
+    event.target.value = '';
+    if (!file) return;
+    try {
+      if (file.size > 4000000) throw new Error('File too large');
+      const imported = M.validate(JSON.parse(await file.text()));
+      confirmAction('Восстановить журнал?', `В копии записей: ${imported.attempts.length}. Текущий журнал будет заменён. Сначала скачайте его копию, если хотите сохранить обе версии.`, 'Восстановить журнал', () => {
+        storageBlocked = false;
+        $('settings-dialog').close();
+        commit(imported, 'Журнал восстановлен из копии', true);
+      });
+    } catch {
+      $('backup-status').textContent = 'Не удалось прочитать копию. Выберите JSON-файл, скачанный из Encore. Текущие записи не изменены.';
+    }
+  });
+
+  window.addEventListener('storage', event => {
+    if (event.key !== M.KEY && event.key !== null) return;
+    try {
+      const next = event.newValue === null ? M.empty() : M.validate(JSON.parse(event.newValue));
+      state = next;
+      undoState = null;
+      storageBlocked = false;
+      $('toast').hidden = true;
+      $('storage-warning').hidden = true;
+      $('storage-label').textContent = 'Обновлено из другой вкладки';
+      render();
+      if ($('count-dialog').open) updateCountHint();
+    } catch {
+      storageBlocked = true;
+      storageWarning('В другой вкладке появились данные, которые не удалось прочитать. Текущие записи доступны для скачивания; хранилище не перезаписывается.');
+    }
+  });
+  render();
+  renderQuote();
+})();
+
+</script>
+</body>
+</html>
